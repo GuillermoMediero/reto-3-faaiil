@@ -36,14 +36,22 @@
           </div>
 			  </nav>
         </div>
-        <div class="row" id="navegador">
-          <div class="col-12 bg-light text-center p-2"> 
-            <form class="d-flex">
-					  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <div class="row bg-light">
+          <div class="text-center p-2 col-12"> 
+            <form class="d-flex justify-content-center">
+					  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:350px">
 					  <button class="btn btn-primary" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
 						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 					  </svg></button>
-					</form>
+
+            <div class="ps-2 color-danger">
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+              </svg></a>
+            </div>
+					  </form>
+
           </div>
         </div>
         <div class="row ">
