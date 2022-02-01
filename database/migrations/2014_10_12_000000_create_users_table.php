@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->enum('rol',['admin','jefe','operador','tecnico']);
+            $table->enum('rol',['Admin','Jefe','Operador','Tecnico']);
+            $table->enum('zona',['Arriaga','Lakua','Sansomendi','Ibaiondo','Zabalgana'])->nullable();
         });
     }
 

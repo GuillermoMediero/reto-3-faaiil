@@ -1,0 +1,233 @@
+body{
+    height: 100vh;
+}
+#navegador{
+  height: 5vh;
+}
+.header{
+    height: 10vh;
+}
+footer{
+  height: 10vh;
+}
+.menu{
+  display:inline-block;
+  cursor: pointer;
+}
+.main {
+  position: relative;
+  top: 50px;
+  padding-top: 20px;
+}
+aside {
+  width: 60px;
+  background: #fff;
+  padding: 0px 0px 10px 0px;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  height: 100%;
+  box-shadow: 0px 3px 5px #6d6d6d;
+  overflow: hidden;
+  z-index: 99;
+}
+aside ul {
+  list-style: none;
+  width: 100%;
+}
+aside ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  position: relative;
+}
+aside ul li a {
+  font-size: 14px;
+  color: #4a4a4a;
+  text-decoration: none;
+  text-transform:uppercase;   
+  white-space: nowrap;
+  display: inline-block;
+}
+aside ul li a span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #000000;
+  width: 38px;
+}
+article {
+  background: #fff ;
+  width: 92%;
+  height: 100vh;
+  margin-left: 7%;
+  border-radius: 5px;
+  box-shadow: 0px 2px 7px #6d6d6d;
+}
+aside ul li:hover {
+  background: #fff;
+  box-shadow: inset 0px 0px 77px #dedede;
+}
+aside ul li a span.notif {
+  position: absolute;
+  top: 8px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  background: #343436;
+  line-height: 31px;
+  border-radius: 100%;
+  color: #fff;
+}
+.red {
+  background: #e74c3c !important;         box-shadow: 0px 0px 10px #e74c3c;
+}
+.yellow {
+  background: #f1c40f !important;         box-shadow: 0px 0px 10px #f1c40f;
+}
+.green {
+  background: #27ae60 !important;
+  box-shadow: 0px 0px 10px #27ae60;
+}
+.pan ul li a span.notif.green {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    right: 5px;    
+    transition: all 0.2s ease;
+}
+.pan ul li a span.notif.yellow  {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    right: 5px;
+    transition: all 0.2s ease;
+}
+.pan ul li a span.notif.red  {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    right: 5px;
+    transition: all 0.2s ease;
+}
+.pan ul li:hover a span.notif.red {
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 60px #e74c3c;
+    top: 10px;
+}
+.pan ul li:hover a span.notif.yellow{
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 60px #f1c40f;
+    top: 10px;
+}
+.pan ul li:hover a span.notif.green{
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 60px #27ae60;
+    top: 10px;
+}
+.pan.keep.width {
+    width: 200px;
+}
+.pan.keep.width ul li a span.notif {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    color: #fff;
+    box-shadow: 0px 0px 10px transparent;
+    top: 8px;
+}
+
+/*  */
+/* ANIMATED X */
+.navbar-toggler {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: .5s ease-in-out;
+  background-color: transparent !important;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+  position: relative;
+}
+
+.navbar-toggler span {
+  margin: 0;
+  padding: 0;
+}
+
+.toggler-icon {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 1px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.middle-bar {
+  margin-top: 0px;
+}
+
+/* State when the navbar is collapsed */
+
+.navbar-toggler.collapsed .top-bar {
+  position: absolute;
+  top: 0px;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  position: absolute;
+  top: 20px;
+  transform: rotate(0deg);
+}
+
+/* when navigation is clicked */
+
+.navbar-toggler .top-bar {
+  top: inherit;
+  transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  top: inherit;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  top: inherit;
+  transform: rotate(-135deg);
+}
+
+/* Color of 3 lines */
+
+.navbar-toggler.collapsed .toggler-icon {
+  background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
+}
