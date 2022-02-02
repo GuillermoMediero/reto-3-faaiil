@@ -250,7 +250,7 @@
                                     </div>
                                     <div class="col-12 text-center">
                                         <label class="form-label" for="detallesOp">Detalles Operador</label>
-                                        <textarea class="form-control" id="detallesOp" rows="3"></textarea>
+                                        <textarea class="form-control" id="detallesOp" rows="7"></textarea>
                                     </div>
                                 </div>
                             </div>
