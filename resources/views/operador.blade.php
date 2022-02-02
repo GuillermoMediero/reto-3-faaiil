@@ -202,28 +202,28 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Nº serie</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label" for="n-serie">Nº serie</label>
+                                        <input type="text" class="form-control" id="n-serie">
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Direccion</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label" for="direccion">Direccion</label>
+                                        <input type="text" class="form-control" id="direccion">
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Zona</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label" for="zona">Zona</label>
+                                        <input type="text" class="form-control" id="zona">
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Modelo</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label" for="modelo">Modelo</label>
+                                        <input type="text" class="form-control" id="modelo"> 
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Marca</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label" for="marca">Marca</label>
+                                        <input type="text" class="form-control" id="marca">
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Segmentos</label>
-                                        <select class="form-select">
+                                        <label class="form-label" for="segmentos">Segmentos</label>
+                                        <select class="form-select" id="segmentos">
                                             <!--Añadir funion base de datos-->
                                             <option selected value="Guipuzcoa">Guipuzcoa</option>
                                             <option selected value="Alava">Alava</option>
@@ -231,8 +231,8 @@
                                         </select>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Tipo Incidencia</label>
-                                        <select class="form-select">
+                                        <label class="form-label" for="tipoIncidencia">Tipo Incidencia</label>
+                                        <select class="form-select" id="tipoIncidencia">
                                             <!--Añadir funion base de datos-->
                                             <option selected value="Guipuzcoa">Guipuzcoa</option>
                                             <option selected value="Alava">Alava</option>
@@ -240,17 +240,17 @@
                                         </select>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <label class="form-label">Detalles Operador</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-6 text-center justify-content-center">
-                                        <label class="form-label">Tecnico</label>
-                                        <select class="form-select">
+                                        <label class="form-label" for="tecnico">Tecnico</label>
+                                        <select class="form-select" id="tecnico">
                                             <!--Añadir funion base de datos-->
                                             <option selected value="Guipuzcoa">Guipuzcoa</option>
                                             <option selected value="Alava">Alava</option>
                                             <option selected value="Vizcaya">Vizcaya</option>
                                         </select>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <label class="form-label" for="detallesOp">Detalles Operador</label>
+                                        <textarea class="form-control" id="detallesOp" rows="3"></textarea>
                                     </div>
                                 </div>
                             </div>
