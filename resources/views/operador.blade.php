@@ -197,6 +197,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="row justify-content-around p-md-3 m-md-2">
+                            <form action="" method="post">
+                            @csrf
                             <div class="col-12 col-md-7">
                                 <div class="row">
                                     <div class="col-6">
@@ -252,6 +254,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                     <div class="modal-footer">
