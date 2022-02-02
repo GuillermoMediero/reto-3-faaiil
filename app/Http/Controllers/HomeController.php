@@ -48,7 +48,8 @@ class HomeController extends Controller
 
     public function show($n_serie,$direccion)
     {      
-        $detalles = Ascensor::find($id);
+        $detalles = Ascensor::find($n_serie);
+        return view('operario', ['detalles' => $detalles]);
     }
     
 }
