@@ -257,7 +257,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" name="send" value="buscar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-bs-dismiss="modal">
+                        <input type="submit" name="send" value="buscar" class="btn btn-primary" data-bs-dismiss="modal" data-bs-target="#staticBackdrop2" >
                     </div>
                     </form>
                 </div>
