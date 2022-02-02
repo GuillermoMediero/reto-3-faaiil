@@ -202,7 +202,7 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="form-label">Nº serie</label>
+                                        <label class="form-label text-center">Nº serie</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
