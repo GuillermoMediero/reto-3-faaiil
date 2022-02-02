@@ -3,7 +3,8 @@
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Psy\TabCompletion\AutoCompleter;
+
+
 
 /*
 |--------------------------------------------------------------------------

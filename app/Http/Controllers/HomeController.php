@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Ascensor;
 
 class HomeController extends Controller
 {
@@ -42,5 +41,8 @@ class HomeController extends Controller
     {
         Auth::logout();
             return redirect('login');
+    
+        
     }
+    
 }
