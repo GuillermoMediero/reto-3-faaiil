@@ -211,15 +211,15 @@
                                     </div>
                                     <div class="col-6 text-center">
                                         <label class="form-label" for="zona">Zona</label>
-                                        <input type="text" class="form-control" id="zona">
+                                        <input type="text" class="form-control disabled" id="zona">
                                     </div>
                                     <div class="col-6 text-center">
                                         <label class="form-label" for="modelo">Modelo</label>
-                                        <input type="text" class="form-control" id="modelo"> 
+                                        <input type="text" class="form-control disabled" id="modelo"> 
                                     </div>
                                     <div class="col-6 text-center">
                                         <label class="form-label" for="marca">Marca</label>
-                                        <input type="text" class="form-control" id="marca">
+                                        <input type="text" class="form-control disabled" id="marca">
                                     </div>
                                     <div class="col-6 text-center">
                                         <label class="form-label" for="segmentos">Segmentos</label>
