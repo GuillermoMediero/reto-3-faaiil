@@ -191,8 +191,8 @@
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center" id="staticBackdropLabel">Creacion de Incidencias</h5>
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title" id="staticBackdropLabel">Creacion de Incidencias</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -201,8 +201,8 @@
                             @csrf
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-6">
-                                        <label class="form-label text-center">Nº serie</label>
+                                    <div class="col-6 text-center">
+                                        <label class="form-label">Nº serie</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
