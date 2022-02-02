@@ -201,7 +201,7 @@
                         <div class="row justify-content-around p-md-3 m-md-2">
                             <div class="col-12">
                                 <div class="row">
-                                    <form method="POST" action=" {{ route('show')}}">
+                                    <!--<form method="POST" action=" {{ route('show')}}">-->
                                     <div class="col-6 text-center">
                                         <label class="form-label" for="n-serie">Nº serie</label>
                                         <input type="text" class="form-control" id="n-serie">
