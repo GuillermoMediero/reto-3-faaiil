@@ -100,7 +100,7 @@
           <footer class="row bg-dark text-center text-white">
             <nav class="navbar navbar-dark bg-dark">
               <div class="text-center p-1 ">
-                <a class="nav-link text-white" href="#">Contacte al jefe</a>
+                <a class="nav-link text-white tooltip-test" title="Hola" href="#">Contacte al jefe</a>
               </div>
               <div  class="text-center bg- p-1 ">
                 <a class="nav-link text-white" href="">© 2022 Creative Commons: Igobide <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
