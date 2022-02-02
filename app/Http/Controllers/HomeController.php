@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Ascensor;
 
 class HomeController extends Controller
 {
@@ -43,6 +44,11 @@ class HomeController extends Controller
             return redirect('login');
     
         
+    }
+
+    public function show($n_serie,$direccion)
+    {      
+        $detalles = Ascensor::find($id);
     }
     
 }

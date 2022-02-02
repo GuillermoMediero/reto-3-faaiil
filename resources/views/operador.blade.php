@@ -164,6 +164,12 @@
                         
                     </div>
                 </div>
+                <div >
+                    <p>n_serie: {{ $detalles->n_serie}}</p>
+                    <p>modelo: {{ $detalles->modelo_id}}</p>
+                    <p>zona: {{ $detalles->zona_id}}</p>
+                    <p>segmento: {{$detalles->segmento}}</p>
+                </div>
             </div>
         </div>
         
@@ -200,6 +206,7 @@
                         <div class="row justify-content-around p-md-3 m-md-2">
                             <div class="col-12">
                                 <div class="row">
+                                    <form method="POST" action=" {{ route('show')}}">
                                     <div class="col-6 text-center">
                                         <label class="form-label" for="n-serie">Nº serie</label>
                                         <input type="text" class="form-control" id="n-serie">
@@ -250,18 +257,28 @@
                                         <label class="form-label" for="detallesOp">Detalles Operador</label>
                                         <textarea class="form-control" id="detallesOp" rows="7"></textarea>
                                     </div>-->
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" id="buscar" value="Buscar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" name="send" value="buscar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" >
+                        
                     </div>
             
                 </div>
             </div>
         </div>
+        <!--<script>
+            $(document).ready(function(){
+                $("#buscar").click(function(){
+                    let n_serie = document.getElementById("n-serie").value;
+                    let direccion = document.getElementById("direccion").value;
+
+                })
+            })
+        </script>-->
 
         <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

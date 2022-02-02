@@ -28,3 +28,4 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
+Route::get('/home/{$n_serie,$direccion}', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
