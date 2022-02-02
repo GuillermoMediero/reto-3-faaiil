@@ -164,12 +164,7 @@
                         
                     </div>
                 </div>
-                <div >
-                    <p>n_serie: {{ $detalles->n_serie}}</p>
-                    <p>modelo: {{ $detalles->modelo_id}}</p>
-                    <p>zona: {{ $detalles->zona_id}}</p>
-                    <p>segmento: {{$detalles->segmento}}</p>
-                </div>
+
             </div>
         </div>
         
