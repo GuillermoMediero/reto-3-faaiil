@@ -29,3 +29,4 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
+Route::get('/autocomplete-search', [App\Http\Controllers\Buscador::class, 'autocompleteSearch']);

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -93,6 +94,19 @@
                 $(".keep").toggleClass("width");
             });
           });</script> 
+
+          <script type="text/javascript">
+              var route = "{{ url('autocomplete-search') }}";
+              $('#search').typeahead({
+                  source: function (query, process) {
+                    return $.get(route, {
+                      query: query
+                    }, function (data) {
+                    return process(data);
+                    });
+                  }
+                });
+             </script>
               <div class="col-12">
                 @yield('rol')
               </div>
