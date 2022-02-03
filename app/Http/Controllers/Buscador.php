@@ -16,7 +16,7 @@ class Buscador extends Controller
 
         $filter_data = Zona::select('zona')
                         ->where('zona', 'LIKE', '%'.$query.'%')
-                        ->get();
+                        ->pluck('zona');
 
         return response()->json($filter_data);
     } 
