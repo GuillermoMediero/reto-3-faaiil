@@ -29,5 +29,5 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
-Route::post('/buscador', [\App\Http\Controllers\Buscador::class, 'hola']);
+Route::post('/home', [\App\Http\Controllers\HomeController::class, 'busqueda'])->name('home.busqueda');
 Route::get('/autocomplete-search', [App\Http\Controllers\Buscador::class, 'autocompleteSearch']);
