@@ -7,10 +7,17 @@ use App\Models\Zona;
 
 class Buscador extends Controller
 {
+
     public function autocompleteSearch(Request $request)
     {
-          $query = $request->get('query');
-          $filterResult = Zona::where('zona', 'LIKE', '%'. $query. '%')->get();
-          return response()->json($filterResult);
+        $data = $request->all();
+
+        $query = $data['query'];
+
+        $filter_data = Zona::select('name')
+                        ->where('zona', 'LIKE', '%'.$query.'%')
+                        ->get();
+
+        return response()->json($filter_data);
     } 
 }
