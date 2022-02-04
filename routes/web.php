@@ -30,5 +30,5 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::post('/home', [\App\Http\Controllers\HomeController::class, 'busqueda'])->name('home.busqueda');
-Route::get('/autocomplete-search', [App\Http\Controllers\Buscador::class, 'autocompleteSearchZona'])->name('buscarZona');
-Route::get('/autocomplete-search', [App\Http\Controllers\Buscador::class, 'autocompleteSearchTipo'])->name('buscarTipo');
+Route::get('/autocomplete-search-zona', [App\Http\Controllers\Buscador::class, 'autocompleteSearchZona'])->name('buscarZona');
+Route::get('/autocomplete-search-tipo', [App\Http\Controllers\Buscador::class, 'autocompleteSearchTipo'])->name('buscarTipo');

@@ -102,7 +102,7 @@
 
           <script>
 
-var path = "{{ route('buscarZona') }}";
+var path = "{{ url('autocomplete-search-zona') }}";
 
 $('#buscarZona').typeahead({
 
@@ -119,7 +119,7 @@ $('#buscarZona').typeahead({
 });
 </script>
 <script>
-var path = "{{ route('buscarTipo') }}";
+var path = "{{ url('autocomplete-search-tipo') }}";
 
 $('#buscarIncidencia').typeahead({
 
