@@ -118,26 +118,21 @@ $('#buscarZona').typeahead({
 
 });
 
-</script>
-<script>
-
-var path = "{{ url('autocomplete-search-tipo') }}";
-
 $('#buscarIncidencia').typeahead({
 
-    source: function(query, process){
+source: function(query, process){
 
-        return $.get(path, {query:query}, function(data){
+    return $.get(path, {query:query}, function(data){
 
-            return process(data);
+        return process(data);
 
-        });
+    });
 
-    }
+}
 
 });
-
 </script>
+
               <div class="col-12">
                 @yield('rol')
               </div>
