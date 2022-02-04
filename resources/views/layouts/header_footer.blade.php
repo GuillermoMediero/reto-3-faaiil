@@ -119,13 +119,13 @@ $('#buscarZona').typeahead({
 });
 </script>
 <script>
-var path = "{{ url('autocomplete-search-tipo') }}";
+var rut = "{{ url('autocomplete-search-tipo') }}";
 
 $('#buscarIncidencia').typeahead({
 
 source: function(query, process){
 
-    return $.get(path, {query:query}, function(data){
+    return $.get(rut, {query:query}, function(data){
 
         return process(data);
 
