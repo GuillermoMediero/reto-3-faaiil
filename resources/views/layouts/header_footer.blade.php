@@ -100,11 +100,30 @@
             });
           });</script> 
 
-<script>
+          <script>
 
-var path = "{{ url('autocomplete-search') }}";
+var path = "{{ url('autocomplete-search-zona') }}";
 
 $('#buscarZona').typeahead({
+
+    source: function(query, process){
+
+        return $.get(path, {query:query}, function(data){
+
+            return process(data);
+
+        });
+
+    }
+
+});
+
+</script>
+<script>
+
+var path = "{{ url('autocomplete-search-tipo') }}";
+
+$('#buscarIncidencia').typeahead({
 
     source: function(query, process){
 
