@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ascensor;
+use App\Models\Asociacion;
+use App\Models\Incidencia;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -31,18 +36,32 @@ class HomeController extends Controller
             return view('jefe');
         }
         if(Auth::user()->rol =="Operador"){
-            return view('operador');
+            $incidencias = Incidencia::orderBy('prioridad','asc')->get();
+            $ascensores = Ascensor::all();
+            $tecnicos = User::where('rol','Tecnico')->get();
+            return view('operador',['incidencias' => $incidencias,'tecnicos' => $tecnicos,'ascensores' => $ascensores]);
         }
         if(Auth::user()->rol =="Tecnico"){
-            return view('tecnico');
+            $incidencias = Incidencia::orderBy('prioridad','asc')->get();
+            $ascensores = Ascensor::all();
+            return view('tecnico',['incidencias' => $incidencias,'ascensores' => $ascensores]);
         }
     }
     public function logout(Request $request)
     {
         Auth::logout();
             return redirect('login');
-    
-        
+    }
+
+   
+    public function edit(Request $request)
+    {
+        $id = $request->get('id');
+        $estado = $request->get('estado');
+        Incidencia::where('id',$id)->update([
+            'estado'=> $estado,
+        ]);
+        return json_encode(array('statusCode'=>200));
     }
     
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 use App\Models\Ascensor;
+use App\Models\User;
 
 class IncidenciaFactory extends Factory
 {
@@ -17,14 +18,15 @@ class IncidenciaFactory extends Factory
     public function definition()
     {
         $nSeries= Ascensor::all()->pluck('n_serie')->toArray();
+     
+
         return [
-            
-            'as_serie' => $this->faker->randomElement($nSeries),
             'prioridad' => $this->faker->randomElement(['0','1','2']),
             'estado'=>$this->faker->randomElement(['0','1','2']),
             'detalles_op'=>$this->faker->address(),
             'detalles_tec'=>$this->faker->address(),
             'tipo'=>$this->faker->randomElement(['electrica','mecanica','estetica']),
+
         ];
     }
 

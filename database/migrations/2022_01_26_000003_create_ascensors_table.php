@@ -16,7 +16,8 @@ class CreateAscensorsTable extends Migration
         Schema::create('ascensors', function (Blueprint $table) {
             $table->integer('n_serie')->primary()->unsigned();
             $table->unsignedBigInteger('modelo_id');
-            $table->unsignedBigInteger('zona_id');
+            $table->string('direccion');
+            $table->enum('zona_id',['Arriaga','Lakua','Sansomendi','Ibaiondo']);
             $table->enum('segmento',['industrial','hospital','comercial','residencial']);
             $table->boolean('sala_maquinas');
         });
@@ -26,13 +27,6 @@ class CreateAscensorsTable extends Migration
             ->references('id')->on('modelos')
             ->onDelete('cascade');
         });
-        Schema::table('ascensors', function(Blueprint $table){
-            $table->foreign('zona_id')
-            ->references('id')->on('zonas')
-            ->onDelete('cascade');
-        });
-
-        
     }
 
     /**

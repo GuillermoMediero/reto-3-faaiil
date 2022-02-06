@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
         Modelo::factory()->count(10)->create();   
         Zona::factory()->count(10)->create();
         Ascensor::factory()->count(10)->create();
-        Incidencia::factory()->count(10)->create();
+        
+        
        
         //Carbon::now()->format('Y-m-d H:i:s') == Carbon::now()
 
@@ -268,5 +269,19 @@ class DatabaseSeeder extends Seeder
                 'rol'=> 'Tecnico',
                 'zona'=>'Zabalgana',
             ]);
-    }
+
+        
+            $ascensores = Ascensor::all()->toArray();
+            $tecnicos = User::where('rol','tecnico')->get()->toArray();
+            foreach ($tecnicos as $tecnico) {
+                foreach ($ascensores as $ascensor) {
+                    if ($ascensor['zona_id'] == $tecnico['zona'])
+                    Incidencia::factory()->create([
+                        'tecnico_id' => $tecnico['id'],
+                        'as_serie' => $ascensor['n_serie'] ,
+                    ]);
+                }
+            }
+        
+        }
 }

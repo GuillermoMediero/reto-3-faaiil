@@ -20,6 +20,7 @@ class CreateIncidenciasTable extends Migration
             $table->enum('estado',['0','1','2']);
             $table->string('detalles_op');
             $table->string('detalles_tec');
+            $table->unsignedBigInteger('tecnico_id');
             $table->enum('tipo',['electrica','mecanica','estetica']);
             $table->timestamps();
         });

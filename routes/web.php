@@ -29,6 +29,11 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
-Route::post('/home', [\App\Http\Controllers\HomeController::class, 'busqueda'])->name('home.busqueda');
+
+Route::patch('/home/edit', [App\Http\Controllers\HomeController::class, 'edit']);
+
+Route::get('/home/busqueda', [\App\Http\Controllers\HomeController::class, 'busqueda']);
+Route::post('/home/busqueda/store', [\App\Http\Controllers\HomeController::class, 'store'])->name('home.busqueda');
+Route::patch('/home/prioridad', [\App\Http\Controllers\Buscador::class, 'prioridad'])->name('home.prioridad');
 Route::get('/autocomplete-search-zona', [App\Http\Controllers\Buscador::class, 'autocompleteSearchZona'])->name('buscarZona');
 Route::get('/autocomplete-search-tipo', [App\Http\Controllers\Buscador::class, 'autocompleteSearchTipo'])->name('buscarTipo');

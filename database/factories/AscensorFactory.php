@@ -18,11 +18,11 @@ class AscensorFactory extends Factory
     {
 
         $nModelos= Modelo::all()->pluck('id')->toArray();
-        $nZonas= Zona::all()->pluck('id')->toArray();
         return [
             'n_serie' => $this->faker->numberBetween(1000,9999),
             'modelo_id' => $this->faker->randomElement($nModelos),
-            'zona_id' => $this->faker->randomElement($nZonas),
+            'direccion'=>$this->faker->address(),
+            'zona_id' => $this->faker->randomElement(['Arriaga','Lakua','Sansomendi','Ibaiondo']),
             'segmento'=>$this->faker->randomElement(['industrial','hospital','comercial','residencial']),
             'sala_maquinas'=>$this->faker->boolean(),
         ];

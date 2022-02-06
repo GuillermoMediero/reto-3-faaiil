@@ -13,4 +13,8 @@ class Incidencia extends Model
     {
         return $this->hasMany(Ascensor::class);
     }
+    public function asociaciones()
+    {
+        return $this->hasMany(Asociacion::class);
+    }
 }

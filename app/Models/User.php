@@ -87,4 +87,10 @@ class User extends Authenticatable
       }
       return false;
     }
+
+    public function asociaciones()
+    {
+        return $this->hasMany(Asociacion::class);
+       
+    }
 }

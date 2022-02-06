@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" ></script>
+  
+    
     <title>Document</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" ></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -51,11 +54,36 @@
 					  </svg></button>
 
             <div class="ps-2 color-danger">
-              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+              <button type="button" id="prioridad" class="border-0 bg-transparent"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-              </svg></a>
+              </svg></button>
             </div>
+            <script>
+              $(document).on("click", "#prioridad", function() {
+                        var url = '{{ URL("/home/prioridad") }}';
+                        var id= 
+                        $.ajax({
+                            url: url,
+                                type: "PATCH",
+                                cache: false,
+                                data:{
+                                    _token:'{{ csrf_token() }}',
+                                    "prioridad":'0',
+                                },
+                                success: function(dataResult){
+                                    $prioritarias = dataResult;
+                                    if($prioritarias!=null)
+                                    {
+                                      window.location = "/home",[$prioritarias];
+                                    }
+                                    else{
+                                        alert("error de sardina");
+                                    }
+                                }
+                        });
+                     });
+            </script>
 					  </form>
 
           </div>
@@ -99,43 +127,40 @@
                 $(".keep").toggleClass("width");
             });
           });</script> 
-
-          <script>
-
-var path = "{{ url('autocomplete-search-zona') }}";
-
-$('#buscarZona').typeahead({
-
-    source: function(query, process){
-
-        return $.get(path, {query:query}, function(data){
-
-            return process(data);
-
-        });
-
-    }
-
-});
-</script>
 <script>
-var rut = "{{ url('autocomplete-search-tipo') }}";
+  var path = "{{ url('autocomplete-search-zona') }}";
 
-$('#buscarIncidencia').typeahead({
+    $('#buscarZona').typeahead({
 
-source: function(query, process){
+        source: function(query, process){
 
-    return $.get(rut, {query:query}, function(data){
+            return $.get(path, {query:query}, function(data){
 
-        return process(data);
+                return process(data);
+
+            });
+
+        }
 
     });
-
-}
-
-});
 </script>
+<script>
+  var rut = "{{ url('autocomplete-search-tipo') }}";
 
+  $('#buscarIncidencia').typeahead({
+
+  source: function(query, process){
+
+      return $.get(rut, {query:query}, function(data){
+
+          return process(data);
+
+      });
+
+  }
+
+  });
+</script>
               <div class="col-12">
                 @yield('rol')
               </div>
@@ -161,5 +186,6 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min
 .js" integrity="sha384-
 ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 crossorigin="anonymous"></script>
+
 </body>
 </html>

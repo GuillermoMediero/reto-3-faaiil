@@ -75,12 +75,10 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
                 }
 
                 /*
-                 * For supporting sessions in php runtime with runners like roadrunner or swoole, the session
-                 * cookie needs to be read from the cookie bag and set on the session storage.
-                 *
-                 * Do not set it when a native php session is active.
+                 * For supporting sessions in php runtime with runners like roadrunner or swoole the session
+                 * cookie need read from the cookie bag and set on the session storage.
                  */
-                if ($sess && !$sess->isStarted() && \PHP_SESSION_ACTIVE !== session_status()) {
+                if ($sess && !$sess->isStarted()) {
                     $sessionId = $request->cookies->get($sess->getName(), '');
                     $sess->setId($sessionId);
                 }
@@ -154,8 +152,7 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
             $request = $event->getRequest();
             $requestSessionCookieId = $request->cookies->get($sessionName);
 
-            $isSessionEmpty = $session->isEmpty() && empty($_SESSION); // checking $_SESSION to keep compatibility with native sessions
-            if ($requestSessionCookieId && $isSessionEmpty) {
+            if ($requestSessionCookieId && $session->isEmpty()) {
                 $response->headers->clearCookie(
                     $sessionName,
                     $sessionCookiePath,
@@ -164,7 +161,7 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
                     $sessionCookieHttpOnly,
                     $sessionCookieSameSite
                 );
-            } elseif ($sessionId !== $requestSessionCookieId && !$isSessionEmpty) {
+            } elseif ($sessionId !== $requestSessionCookieId) {
                 $expire = 0;
                 $lifetime = $sessionOptions['cookie_lifetime'] ?? null;
                 if ($lifetime) {
