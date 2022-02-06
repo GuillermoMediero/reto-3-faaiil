@@ -33,7 +33,10 @@ class HomeController extends Controller
             return view('admin');
         }
         if(Auth::user()->rol =="Jefe"){
-            return view('jefe');
+            $incidencias = Incidencia::orderBy('prioridad','asc')->get();
+            $ascensores = Ascensor::all();
+            $tecnicos = User::where('rol','Tecnico')->get();
+            return view('jefe',['incidencias' => $incidencias,'tecnicos' => $tecnicos,'ascensores' => $ascensores]);
         }
         if(Auth::user()->rol =="Operador"){
             $incidencias = Incidencia::orderBy('prioridad','asc')->get();
