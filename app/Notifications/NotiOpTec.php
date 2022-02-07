@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -56,7 +57,9 @@ class NotiOpTec extends Notification
     public function toArray($notifiable)
     {
         return [
-            'offer_id' => $this->offerData['offer_id']
+            'offer_id' => $this->offerData['offer_id'],
+            'titulo' => $this->offerData['titulo'],
+            'time' => Carbon::now()->diffForHumans()
         ];
     }
 }

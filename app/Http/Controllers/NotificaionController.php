@@ -15,16 +15,12 @@ public function sendOfferNotification() {
     $userSchema = User::first();
 
     $offerData = [
-        'name' => 'BOGO',
-        'body' => 'You received an offer.',
-        'thanks' => 'Thank you',
-        'offerText' => 'Check out the offer',
-        'offerUrl' => url('/'),
+        'name' => 'Nueva incidencia',
+        'body' => 'Se creo una nueva incidencia',
         'offer_id' => 007
     ];
 
-    Notification::send($userSchema, new OffersNotification($offerData));
+    $userSchema->notify(new NotiOpTec($offerData));
 
-    dd('Task completed!');
     }
 }

@@ -65,6 +65,7 @@
                             <li class="list-group-item">{{$tecnico->id}}</li>
                             <li class="list-group-item">{{$tecnico->email}}</li>
                         </ul>
+                        <a href="route{{ notification }}" class="btn">Enviar notificacion</a>
                         @endif
                         @endforeach
                     </div>

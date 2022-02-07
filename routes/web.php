@@ -37,4 +37,4 @@ Route::post('/home/busqueda/store', [\App\Http\Controllers\HomeController::class
 Route::patch('/home/prioridad', [\App\Http\Controllers\Buscador::class, 'prioridad'])->name('home.prioridad');
 Route::get('/autocomplete-search-zona', [App\Http\Controllers\Buscador::class, 'autocompleteSearchZona'])->name('buscarZona');
 Route::get('/autocomplete-search-tipo', [App\Http\Controllers\Buscador::class, 'autocompleteSearchTipo'])->name('buscarTipo');
-
+Route::get('/send-notification', [App\Http\Controllers\NotificationController::class, 'sendOfferNotification'])->name('notification');
