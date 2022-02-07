@@ -3,7 +3,6 @@
     
     <div class="container"style="height:75vh">
         <h3 class="pt-3">Jefe</h3>
-        <?php dd($incidencias)?>
         @foreach ($incidencias as $incidencia)
             <h4>Nº : {{ $incidencia->as_serie }}</h4>
         @endforeach
