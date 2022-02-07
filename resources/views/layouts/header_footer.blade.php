@@ -199,8 +199,8 @@
               </div>
               <div class="text-center p-1">
                 @if(Auth::user()->rol=="Admin")
-                <a class="nav-link text-white dropup" href="#"  id="perfilAdmin" data-bs-toggle="dropdown" aria-expanded="false">Manual de la aplicacion</a>
-                <ul class="dropdown-menu">
+                <a class="nav-link text-white dropup" href="#"  id="manual" data-bs-toggle="dropdown" aria-expanded="false">Manual de la aplicacion</a>
+                <ul class="dropdown-menu" aria-labelledby="manual">
                   <li><a class="dropdown-item" href="#">Manual Tecnico</a></li>
                   <li><a class="dropdown-item" href="#">Manual Operario</a></li>
                   <li><a class="dropdown-item" href="#">Manual Jefe</a></li>
