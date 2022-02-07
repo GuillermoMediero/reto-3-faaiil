@@ -11,16 +11,14 @@ class NotiOpTec extends Notification
 {
     use Queueable;
 
-    private $notification;
-
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($notification)
+    public function __construct()
     {
-        $this->notification = $notification;
+        //
     }
 
     /**
@@ -57,8 +55,7 @@ class NotiOpTec extends Notification
     public function toArray($notifiable)
     {
         return [
-            'titulo' => $this->notificacion['titulo'],
-            'contenido' => $this->notificacion['contenido']
+            //
         ];
     }
 }
