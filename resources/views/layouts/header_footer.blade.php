@@ -186,7 +186,23 @@
           <footer class="row bg-dark text-center text-white">
             <nav class="navbar navbar-dark bg-dark">
               <div class="text-center p-1 ">
-                
+
+              </div>
+              <div  class="text-center bg- p-1 ">
+                <a class="nav-link text-white" href="">© 2022 Creative Commons: Igobide <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+              </div>
+              <div class="text-center p-1">
+                @if()
+                <a class="nav-link text-white dropup" href="#"  id="perfilAdmin" data-bs-toggle="dropdown" aria-expanded="false">Manual de la aplicacion</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Manual Tecnico</a></li>
+                  <li><a class="dropdown-item" href="#">Manual Operario</a></li>
+                  <li><a class="dropdown-item" href="#">Manual Jefe</a></li>
+                  <li><a class="dropdown-item" href="#">Manual Julen</a></li>
+                </ul>
+                @else
+                <a class="nav-link text-white" href="#">Manual de la aplicacion</a>
+                @endif
               </div>
              </nav>
 
