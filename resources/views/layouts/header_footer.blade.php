@@ -186,13 +186,19 @@
           <footer class="row bg-dark text-center text-white">
             <nav class="navbar navbar-dark bg-dark">
               <div class="text-center p-1 ">
-
+                @if(Auth::user()->rol=="Tecnico")
+                <a class="nav-link text-white" href="#">Contacte al Operario</a>
+                @elseif(Auth::user()->rol=="Operador")
+                  <a class="nav-link text-white" href="#">Contacte al Jefe</a>
+                @elseif(Auth::user()->rol=="Jefe")
+                <a class="nav-link text-white" href="#">Contacte a Julen</a>
+                @endif
               </div>
               <div  class="text-center bg- p-1 ">
                 <a class="nav-link text-white" href="">© 2022 Creative Commons: Igobide <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
               </div>
               <div class="text-center p-1">
-                @if()
+                @if(Auth::user()->rol=="Admin")
                 <a class="nav-link text-white dropup" href="#"  id="perfilAdmin" data-bs-toggle="dropdown" aria-expanded="false">Manual de la aplicacion</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Manual Tecnico</a></li>
