@@ -9,14 +9,14 @@
                 <div class="col-sm-12">
                 <table class="table table-bordered border-primary table-success table-striped">
                     <thead class="table-dark text-white">
+                    <th>id Incidencia</th>  
                     <th>Tipo Incidencia</th>
                     <th>Nº Resuelto</th>
                     </thead>
                     @foreach ($incidencias as $incidencia )
                     <tr>
-                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $incidencia->tipo }}</td>
-                    <td>{{ $incidencia->estado == 2}}</td>
+                    <td>{{ $incidencia->estado == 2}}{{$loop->count}}</td>
                     </tr>
                     @endforeach
                 </table>
