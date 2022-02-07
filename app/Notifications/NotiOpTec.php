@@ -10,15 +10,16 @@ use Illuminate\Notifications\Notification;
 class NotiOpTec extends Notification
 {
     use Queueable;
+    private $offerData;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($offerData)
     {
-        //
+        $this->offerData = $offerData;
     }
 
     /**
@@ -55,7 +56,7 @@ class NotiOpTec extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'offer_id' => $this->offerData['offer_id']
         ];
     }
 }
