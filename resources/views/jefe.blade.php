@@ -24,6 +24,48 @@
                 </div>
                 </div> 
             </div>
+
+            <div class="col-sm-12 col-md-6">
+            <h3>Incidencias por Numero de serie</h3>
+                <hr>
+                <div class="row table-responsive">
+                <div class="col-sm-12">
+                <table class="table table-bordered border-primary table-success table-striped">
+                    <thead class="table-dark text-white">
+                    <th>Tipo Incidencia</th>
+                    <th>Nº Incidencias totales</th>
+                    </thead>
+                    @foreach ($num_series as $num_serie)
+                    <tr>
+                    <td>{{ $num_serie->as_serie }}</td>
+                    <td>{{ $num_serie->cantidad}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+                </div>
+                </div> 
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+            <h3>Top Incidencias por Numero de serie</h3>
+                <hr>
+                <div class="row table-responsive">
+                <div class="col-sm-12">
+                <table class="table table-bordered border-primary table-success table-striped">
+                    <thead class="table-dark text-white">
+                    <th>Tipo Incidencia</th>
+                    <th>Nº Incidencias totales</th>
+                    </thead>
+                    @foreach ($top_num_series as $top_num_serie)
+                    <tr>
+                    <td>{{ $top_num_serie->as_serie }}</td>
+                    <td>{{ $top_num_serie->cantidad}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+                </div>
+                </div> 
+            </div>
                         <!--Tabla-->
             <div class="col-sm-12 col-md-6">
             <h3>Incidencias Totales</h3>
