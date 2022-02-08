@@ -5,6 +5,8 @@
         <h3 class="pt-3">Jefe</h3>
         <div class="row">
         <div class="col-sm-12 col-md-6">
+                <h3>Incidencias completas</h3>
+                <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
                 <table class="table table-bordered border-primary table-success table-striped">
@@ -24,6 +26,8 @@
             </div>
                         <!--Tabla-->
             <div class="col-sm-12 col-md-6">
+            <h3>Incidencias Totales</h3>
+                <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
                 <table class="table table-bordered border-primary table-success table-striped">
