@@ -33,19 +33,19 @@ class HomeController extends Controller
             return view('admin');
         }
         if(Auth::user()->rol =="Jefe"){
-            /*$incidencias = Incidencia::whereIn('as_serie', function($query){
+            $incidencias = Incidencia::whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona);
-            })->get();*/
-            $completos = Incidencia::select('tipo')
+            })->get();
+            /*$completos = Incidencia::select('tipo')
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona)
                 ->groupBy('tipo');
-            })->get();
-            return view('jefe', ['completos' => $completos]);
+            })->get();*/
+            return view('jefe', ['incidencias' => $incidencias]);
         }
         if(Auth::user()->rol =="Operador"){
             $incidencias = Incidencia::orderBy('prioridad','asc')->get();
