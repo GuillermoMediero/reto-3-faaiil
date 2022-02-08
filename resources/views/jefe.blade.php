@@ -24,7 +24,7 @@
             </div> 
             <!--Tabla-->
             <div class="col-sm-12 col-md-6">
-                <canvas id="myChart" width="400" height="400"></canvas>
+               
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="row table-responsive">
