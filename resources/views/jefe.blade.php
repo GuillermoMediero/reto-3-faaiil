@@ -53,10 +53,13 @@
                     <th>Tipo Incidencia</th>
                     <th>Nº Resuelto</th>
                     </thead>
-                    @foreach ($incidencias as $incidencia )
+                    @foreach ($incidencias as $incidencia)
+                    @if({{ $incidencia->estado == 2})
+                        <?php $i++ ?>
+                    @endif
                     <tr>
                     <td>{{ $incidencia->tipo }}</td>
-                    <td>{{ $incidencia->estado == 2}</td>
+                    <td><?php echo $i?></td>
                     </tr>
                     @endforeach
                 </table>
@@ -65,15 +68,15 @@
             </div> 
         </div>
     </div>
-    <script>
+   <!-- <script>
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Estatica', 'Electrica', 'Yellow'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Eficacia de los tecnicos',
+                    data: $incidencia->estado,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -101,6 +104,6 @@
                 }
             }
         });
-    </script>
+    </script>-->
     
 @endsection
