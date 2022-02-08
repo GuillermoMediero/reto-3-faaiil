@@ -25,7 +25,7 @@
                 </div> 
             </div>
             <div class="col-sm-12 col-md-6">
-            <h3>Incidencias Por Numero de Serie</h3>
+            <h3>Incidencias Numero de Serie</h3>
                 <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="col-sm-12 col-md-6">
-            <h3>Top Incidencias Por Numero de Serie</h3>
+            <h3>Top Incidencias Numero de Serie</h3>
                 <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
