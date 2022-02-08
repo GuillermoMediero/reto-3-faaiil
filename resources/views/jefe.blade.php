@@ -3,6 +3,7 @@
     
     <div class="container"style="height:75vh">
         <h3 class="pt-3">Jefe</h3>
+        dd($completos)
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="row table-responsive">
@@ -12,10 +13,10 @@
                     <th>Tipo Incidencia</th>
                     <th>Nº Resuelto</th>
                     </thead>
-                    @foreach ($incidencias as $incidencia )
+                    @foreach ($completos as $completo)
                     <tr>
-                    <td>{{ $incidencia->tipo }}</td>
-                    <td>{{ $incidencia->estado })</td>
+                    <td>{{ $completo->tipo }}</td>
+                    <td>{{ $completo->estado })</td>
                     </tr>
                     @endforeach
                 </table>
