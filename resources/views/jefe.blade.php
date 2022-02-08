@@ -15,7 +15,7 @@
                     @foreach ($incidencias as $incidencia )
                     <tr>
                     <td>{{ $incidencia->tipo }}</td>
-                    <td>{{ $incidencia->estado})</td>
+                    <td>{{ $incidencia->estado })</td>
                     </tr>
                     @endforeach
                 </table>
