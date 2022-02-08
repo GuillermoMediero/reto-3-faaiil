@@ -38,7 +38,7 @@
                     @foreach ($num_series as $num_serie)
                     <tr>
                     <td>{{ $num_serie->as_serie }}</td>
-                    <td>{{ $num_serie->cantidad}}</td>
+                    <td>{{ $num_serie->numero}}</td>
                     </tr>
                     @endforeach
                 </table>

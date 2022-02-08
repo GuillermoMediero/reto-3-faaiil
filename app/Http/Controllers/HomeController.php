@@ -56,7 +56,7 @@ class HomeController extends Controller
                 ->groupBy('tipo')
                 ->get();
             $num_series = DB::table('incidencias')
-                ->select(DB::raw('as_serie, count(*) as cantidad'))
+                ->select(DB::raw('as_serie, count(*) as numero'))
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
@@ -72,7 +72,7 @@ class HomeController extends Controller
                 })->groupBy('tipo')
                 ->orderBy("cantidad", "desc")
                 ->get();*/
-            return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas, 'num_serie' => $num_series]);
+            return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas, 'num_series' => $num_series]);
         }
         if(Auth::user()->rol =="Operador"){
             $incidencias = Incidencia::orderBy('prioridad','asc')->get();
