@@ -43,9 +43,9 @@ class HomeController extends Controller
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
-                ->where('zona_id', auth()->user()->zona)
-                ->groupBy('tipo');
-            })->get();
+                ->where('zona_id', auth()->user()->zona);
+                })->groupBy('tipo')
+                ->get();
             return view('jefe', ['incidencias' => $incidencias]);
         }
         if(Auth::user()->rol =="Operador"){
