@@ -3,7 +3,6 @@
     
     <div class="container"style="height:75vh">
         <h3 class="pt-3">Jefe</h3>
-        dd($incidencias);
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="row table-responsive">
@@ -16,7 +15,7 @@
                     @foreach ($incidencias as $incidencia )
                     <tr>
                     <td>{{ $incidencia->tipo }}</td>
-                    <td>{{ $incidencia->estado}</td>
+                    <td>{{ $incidencia->estado}}</td>
                     </tr>
                     @endforeach
                 </table>
