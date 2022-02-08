@@ -61,7 +61,7 @@ class HomeController extends Controller
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona);
-                })->groupBy('tipo')
+                })->groupBy('as_serie')
                 ->get();
             /*$top_num_series = DB::table('incidencias')
                 ->select(DB::raw('as_serie, count(*) as cantidad'))
