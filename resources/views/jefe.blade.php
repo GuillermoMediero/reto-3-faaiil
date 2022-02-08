@@ -14,10 +14,8 @@
                     </thead>
                     @foreach ($incidencias as $incidencia )
                     <tr>
-                    @if ($loop->first)
                     <td>{{ $incidencia->tipo }}</td>
-                    @endif
-                    <td>{{ $incidencia->estado == 2})</td>
+                    <td>{{ $incidencia->estado})</td>
                     </tr>
                     @endforeach
                 </table>
