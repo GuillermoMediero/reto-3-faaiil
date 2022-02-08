@@ -55,23 +55,7 @@ class HomeController extends Controller
                 })->where('estado',3)
                 ->groupBy('tipo')
                 ->get();
-            /*$num_series = DB::table('incidencias')
-                ->select(DB::raw('as_serie, count(*) as numero'))
-                ->whereIn('as_serie', function($query){
-                $query->select('n_serie')
-                ->from(with(new Ascensor)->getTable())
-                ->where('zona_id', auth()->user()->zona);
-                })->groupBy('as_serie')
-                ->get();*/
-            /*$top_num_series = DB::table('incidencias')
-                ->select(DB::raw('as_serie, count(*) as numero'))
-                ->whereIn('as_serie', function($query){
-                $query->select('n_serie')
-                ->from(with(new Ascensor)->getTable())
-                ->where('zona_id', auth()->user()->zona);
-                })->groupBy('as_serie')
-                ->orderBy("numero", "desc")
-                ->get();*/
+
             return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas]);
         }
         if(Auth::user()->rol =="Operador"){
