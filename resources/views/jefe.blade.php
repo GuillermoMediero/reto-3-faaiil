@@ -12,10 +12,10 @@
                     <th>Tipo Incidencia</th>
                     <th>Nº Resuelto</th>
                     </thead>
-                    @foreach ($completos as $completo)
+                    @foreach ($incidencias as $incidencia )
                     <tr>
-                    <td>{{ $completo->tipo }}</td>
-                    <td>{{ $completo->estado })</td>
+                    <td>{{ $incidencia->tipo }}</td>
+                    <td>{{ $incidencia->estado}</td>
                     </tr>
                     @endforeach
                 </table>
