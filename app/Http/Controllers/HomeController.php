@@ -42,7 +42,8 @@ class HomeController extends Controller
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
-                ->where('zona_id', auth()->user()->zona);
+                ->where('zona_id', auth()->user()->zona)
+                ->groupBy('tipo');
             })->get();
             return view('jefe', ['completos' => $completos]);
         }
