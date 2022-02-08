@@ -24,7 +24,7 @@
             </div> 
             <!--Tabla-->
             <div class="col-sm-12 col-md-6">
-               
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="row table-responsive">
@@ -54,12 +54,8 @@
                     <th>Nº Resuelto</th>
                     </thead>
                     @foreach ($incidencias as $incidencia)
-                    @if({{ $incidencia->estado == 2})
-                        <?php $i++ ?>
-                    @endif
                     <tr>
                     <td>{{ $incidencia->tipo }}</td>
-                    <td><?php echo $i?></td>
                     </tr>
                     @endforeach
                 </table>
