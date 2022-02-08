@@ -55,14 +55,14 @@ class HomeController extends Controller
                 })->where('estado',3)
                 ->groupBy('tipo')
                 ->get();
-            $num_series = DB::table('incidencias')
+            /*$num_series = DB::table('incidencias')
                 ->select(DB::raw('as_serie, count(*) as numero'))
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona);
                 })->groupBy('as_serie')
-                ->get();
+                ->get();*/
             /*$top_num_series = DB::table('incidencias')
                 ->select(DB::raw('as_serie, count(*) as cantidad'))
                 ->whereIn('as_serie', function($query){
@@ -72,7 +72,7 @@ class HomeController extends Controller
                 })->groupBy('tipo')
                 ->orderBy("cantidad", "desc")
                 ->get();*/
-            return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas, 'num_series' => $num_series]);
+            return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas]);
         }
         if(Auth::user()->rol =="Operador"){
             $incidencias = Incidencia::orderBy('prioridad','asc')->get();

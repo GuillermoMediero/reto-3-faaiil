@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-sm-12 col-md-6">
-            <h3>Incidencias por Numero de serie</h3>
+             <!--<h3>Incidencias por Numero de serie</h3>
                 <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
@@ -43,7 +43,7 @@
                     @endforeach
                 </table>
                 </div>
-                </div> 
+                </div> -->
             </div>
 
             <div class="col-sm-12 col-md-6">
@@ -64,8 +64,8 @@
                     @endforeach
                 </table>
                 </div>
-                </div> 
-            </div>-->
+                </div> -->
+            </div>
                         <!--Tabla-->
             <div class="col-sm-12 col-md-6">
             <h3>Incidencias Totales</h3>
