@@ -38,7 +38,7 @@ class HomeController extends Controller
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona);
             })->get();*/
-            $completos = Incidencia::select('tipo, count(estado) as estado')
+            $completos = Incidencia::select('tipo')
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
