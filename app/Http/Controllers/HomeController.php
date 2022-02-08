@@ -46,7 +46,16 @@ class HomeController extends Controller
                 ->where('zona_id', auth()->user()->zona);
                 })->groupBy('tipo')
                 ->get();
-            return view('jefe', ['incidencias' => $incidencias]);
+            $completas = DB::table('incidencias')
+                ->select(DB::raw('tipo, count(*) as estado'))
+                ->whereIn('as_serie', function($query){
+                $query->select('n_serie')
+                ->from(with(new Ascensor)->getTable())
+                ->where('zona_id', auth()->user()->zona);
+                })->where('estado',3)
+                ->groupBy('tipo')
+                ->get();
+            return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas]);
         }
         if(Auth::user()->rol =="Operador"){
             $incidencias = Incidencia::orderBy('prioridad','asc')->get();
