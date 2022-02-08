@@ -65,7 +65,7 @@
                             <li class="list-group-item">{{$tecnico->id}}</li>
                             <li class="list-group-item">{{$tecnico->email}}</li>
                         </ul>
-                        <a href="URL('enviar-noti')" >Enviar notificacion</a>
+                        <a href="enviar-noti" >Enviar notificacion</a>
                         @endif
                         @endforeach
                     </div>
