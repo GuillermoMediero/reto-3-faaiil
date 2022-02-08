@@ -55,7 +55,6 @@ class HomeController extends Controller
                 })->where('estado',3)
                 ->groupBy('tipo')
                 ->get();
-            
             return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas]);
         }
         if(Auth::user()->rol =="Operador"){
