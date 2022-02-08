@@ -3,8 +3,7 @@
     
     <div class="container"style="height:75vh">
         <h3 class="pt-3">Jefe</h3>
-        dd($completos)
-        <!--<div class="row">
+        <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="row table-responsive">
                 <div class="col-sm-12">
@@ -22,7 +21,7 @@
                 </table>
                 </div>
                 </div> 
-            </div> -->
+            </div> 
             <!--Tabla-->
         </div>
     </div>
