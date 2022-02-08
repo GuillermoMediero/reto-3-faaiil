@@ -8,14 +8,14 @@ use App\Models\Incidencia;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return void>
      */
     public function __construct()
     {
@@ -33,18 +33,19 @@ class HomeController extends Controller
             return view('admin');
         }
         if(Auth::user()->rol =="Jefe"){
-            $incidencias = Incidencia::whereIn('as_serie', function($query){
+            /*$incidencias = Incidencia::whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona);
-            })->get();
-            /*$completos = Incidencia::select('tipo')
+            })->get();*/
+            $incidencias = DB::table('incidencias')
+                ->select(DB::raw('tipo, count(*) as estado'))
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
                 ->from(with(new Ascensor)->getTable())
                 ->where('zona_id', auth()->user()->zona)
                 ->groupBy('tipo');
-            })->get();*/
+            })->get();
             return view('jefe', ['incidencias' => $incidencias]);
         }
         if(Auth::user()->rol =="Operador"){
