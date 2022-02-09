@@ -67,7 +67,7 @@
             </div>
                         <!--Tabla-->
             <div class="col-sm-12 col-md-6">
-            <h3>Top Incidencias Numero de Serie</h3>
+            <h3>Incidencias Modelo</h3>
                 <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
@@ -88,7 +88,7 @@
             </div>
 
             <div class="col-sm-12 col-md-6">
-            <h3>Top Incidencias Numero de Serie</h3>
+            <h3>Top Incidencias Modelo</h3>
                 <hr>
                 <div class="row table-responsive">
                 <div class="col-sm-12">
