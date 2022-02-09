@@ -2,7 +2,6 @@
 
 namespace App\Notifications;
 
-use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -11,16 +10,15 @@ use Illuminate\Notifications\Notification;
 class NotiOpTec extends Notification
 {
     use Queueable;
-    private $offerData;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($offerData)
+    public function __construct()
     {
-        $this->offerData = $offerData;
+        //
     }
 
     /**
@@ -57,9 +55,7 @@ class NotiOpTec extends Notification
     public function toArray($notifiable)
     {
         return [
-            'offer_id' => $this->offerData['offer_id'],
-            'titulo' => $this->offerData['titulo'],
-            'time' => Carbon::now()->diffForHumans()
+            //
         ];
     }
 }

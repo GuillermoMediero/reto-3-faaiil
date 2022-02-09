@@ -46,7 +46,6 @@ class Buscador extends Controller
     public function busqueda(Request $request)
     {
         $n_serie = $request->get('n_serie');
-
         $direccion = $request->get('direccion');
         if(isset($n_serie)){
             $ascensores =Ascensor::where('n_serie','like','%'.$n_serie.'%')->get();

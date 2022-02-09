@@ -4,7 +4,8 @@
 <div class="container" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
-      <h3>{{ __('bienvenido a la plataforma de ascensores igobide. por favor inicia session para la implementacion del usuario .') }} </h3>
+      <h3>{{ __('Bienvenido a la plataforma de ascensores igobide.') }} </h3>
+      <h3>{{ __('Por favor inicia sesión para acceder como usuario.') }} </h3>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('login') }}">
@@ -12,11 +13,11 @@
 
         <div class="card card-login card-hidden mb-3">
           <div class="card-header card-header-primary text-center">
-            <h4 class="card-title"><strong>{{ __('Inicio de session') }}</strong></h4>
+            <h4 class="card-title"><strong>{{ __('Inicio de sesion') }}</strong></h4>
             
           </div>
           <div class="card-body">
-            <p class="card-description text-center">{{ __('HOLA,POR FAVOR, INICIA SESSSION ') }} </p>
+            <p class="card-description text-center">{{ __('Hola, por favor, inicia sesión ') }} </p>
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -47,34 +48,20 @@
    style="cursor: pointer"></i>
    </span>
               <script type="text/javascript">
-  const togglePassword = document.querySelector("#togglePassword");
-const password = document.querySelector("#password");
+                const togglePassword = document.querySelector("#togglePassword");
+                const password = document.querySelector("#password");
 
-togglePassword.addEventListener("click", function () {
-   
-  // toggle the type attribute
-  const type = password.getAttribute("type") === "password" ? "text" : "password";
-  password.setAttribute("type", type);
-  // toggle the eye icon
-  this.classList.toggle('fa-eye');
-  this.classList.toggle('fa-eye-slash');
-});
-</script>
-              <!--script ojo de ver la -->
-              <script type="text/javascript">
-  const togglePassword = document.querySelector("#togglePassword");
-const password = document.querySelector("#password");
-
-togglePassword.addEventListener("click", function () {
-   
-  // toggle the type attribute
-  const type = password.getAttribute("type") === "password" ? "text" : "password";
-  password.setAttribute("type", type);
-  // toggle the eye icon
-  this.classList.toggle('fa-eye');
-  this.classList.toggle('fa-eye-slash');
-});
-</script>
+                togglePassword.addEventListener("click", function () {
+                  
+                  // toggle the type attribute
+                  const type = password.getAttribute("type") === "password" ? "text" : "password";
+                  password.setAttribute("type", type);
+                  // toggle the eye icon
+                  this.classList.toggle('fa-eye');
+                  this.classList.toggle('fa-eye-slash');
+                });
+              </script>
+              
                 
               </div>
               @if ($errors->has('password'))
@@ -85,7 +72,7 @@ togglePassword.addEventListener("click", function () {
             </div>
             <div class="form-check mr-auto ml-3 mt-3">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('mantener iniciado') }}
+                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Mantener iniciado') }}
                 <span class="form-check-sign">
                   <span class="check"></span>
                 </span>
@@ -93,24 +80,10 @@ togglePassword.addEventListener("click", function () {
             </div>
           </div>
           <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('INCIA SESSION BUEY') }}</button>
+            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Iniciar sesión') }}</button>
           </div>
         </div>
-      </form>
-      <div class="row">
-        <div class="col-6">
-            @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}" class="text-light">
-                    <small>{{ __('no recuerdas tu contraseña?') }}</small>
-                </a>
-            @endif
-        </div>
-        <div class="col-6 text-right">
-            <a href="{{ route('register') }}" class="text-light">
-                <small>{{ __('crear nueva cuenta') }}</small>
-            </a>
-        </div>
-      </div>
+      </form> 
     </div>
   </div>
 </div>

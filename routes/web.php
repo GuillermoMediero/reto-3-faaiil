@@ -30,11 +30,19 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
 
-Route::patch('/home/edit', [App\Http\Controllers\HomeController::class, 'edit']);
+Route::patch('/home/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
 
-Route::get('/home/busqueda', [\App\Http\Controllers\HomeController::class, 'busqueda']);
+Route::get('/home/busqueda', [\App\Http\Controllers\HomeController::class, 'show'])->name('busqueda.show');
+
 Route::post('/home/busqueda/store', [\App\Http\Controllers\HomeController::class, 'store'])->name('home.busqueda');
-Route::patch('/home/prioridad', [\App\Http\Controllers\Buscador::class, 'prioridad'])->name('home.prioridad');
+
+Route::get('/home/perfil', [\App\Http\Controllers\HomeController::class, 'perfil'])->name('home.perfil');
+
+Route::get('/home/crearUsuario', [\App\Http\Controllers\HomeController::class, 'crearUsuario'])->name('home.crearusuario');
+Route::get('/home/crearIncidencia', [\App\Http\Controllers\HomeController::class, 'crearIncidencia'])->name('home.crearincidencia');
+Route::post('/home/crearUsuario/guardarUsuario', [\App\Http\Controllers\HomeController::class, 'storeusuario'])->name('home.guardarusuario');
+Route::post('/home/crearUsuario/guardarIncidencia', [\App\Http\Controllers\HomeController::class, 'storeincidencia'])->name('home.guardarincidencia');
+Route::get('/home/prioridad', [\App\Http\Controllers\HomeController::class, 'prioridad'])->name('prioridad');
+Route::get('/home/store', [\App\Http\Controllers\HomeController::class, 'store'])->name('store');
 Route::get('/autocomplete-search-zona', [App\Http\Controllers\Buscador::class, 'autocompleteSearchZona'])->name('buscarZona');
 Route::get('/autocomplete-search-tipo', [App\Http\Controllers\Buscador::class, 'autocompleteSearchTipo'])->name('buscarTipo');
-Route::get('/enviar-noti', [App\Http\Controllers\NotificationController::class, 'sendOfferNotification'])->name('notification');
