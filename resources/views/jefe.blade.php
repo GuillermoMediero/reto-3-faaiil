@@ -4,7 +4,7 @@
     <div class="container"style="height:75vh">
         <h3 class="pt-3">Jefe</h3>
         <div class="row">
-            <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6">
                 <h3>Incidencias completas</h3>
                 <hr>
                 <div class="row table-responsive">
@@ -44,8 +44,7 @@
                 </div>
                 </div> 
             </div>
-        </div>
-        <div class="row">
+
             <div class="col-sm-12 col-md-6">
             <h3>Top Incidencias Numero de Serie</h3>
                 <hr>
@@ -87,28 +86,6 @@
                 </div>
                 </div> 
             </div> 
-        </div>
-        <div class="row">
-        <!--<div class="col-sm-12 col-md-6">
-            <h3>Incidencias Modelo</h3>
-                <hr>
-                <div class="row table-responsive">
-                <div class="col-sm-12">
-                <table class="table table-bordered border-primary table-success table-striped">
-                    <thead class="table-dark text-white">
-                    <th>Tipo Incidencia</th>
-                    <th>Nº Incidencias totales</th>
-                    </thead>
-                    @foreach ($modelos as $model)
-                    <tr>
-                    <td>{{ $modelo->as_serie }}</td>
-                    <td>{{ $modelo->numero}}</td>
-                    </tr>
-                    @endforeach
-                </table>
-                </div>
-                </div> 
-            </div>-->
         </div>
     </div>
    <!-- <script>
