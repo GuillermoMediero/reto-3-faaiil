@@ -31,8 +31,8 @@
                 <div class="col-sm-12">
                 <table class="table table-bordered border-primary table-success table-striped">
                     <thead class="table-dark text-white">
-                    <th>Tipo Incidencia</th>
-                    <th>Nº Incidencias totales</th>
+                    <th>Nº Serie</th>
+                    <th>Nº Incidencias</th>
                     </thead>
                     @foreach ($num_series as $num_serie )
                     <tr>
@@ -52,8 +52,8 @@
                 <div class="col-sm-12">
                 <table class="table table-bordered border-primary table-success table-striped">
                     <thead class="table-dark text-white">
-                    <th>Tipo Incidencia</th>
-                    <th>Nº Incidencias totales</th>
+                    <th>Nº Modelo</th>
+                    <th>Nº Incidencias</th>
                     </thead>
                     @foreach ($top_num_series as $top_num_serie )
                     <tr>
@@ -66,6 +66,27 @@
                 </div> 
             </div>
                         <!--Tabla-->
+            <div class="col-sm-12 col-md-6">
+            <h3>Top Incidencias Numero de Serie</h3>
+                <hr>
+                <div class="row table-responsive">
+                <div class="col-sm-12">
+                <table class="table table-bordered border-primary table-success table-striped">
+                    <thead class="table-dark text-white">
+                    <th>Marca Ascensor</th>
+                    <th>Nº Incidencias</th>
+                    </thead>
+                    @foreach ($modelos as $modelo)
+                    <tr>
+                    <td>{{ $modelo->as_serie }}</td>
+                    <td>{{ $modelo->numero}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+                </div>
+                </div> 
+            </div>
+
             <div class="col-sm-12 col-md-6">
             <h3>Incidencias Totales</h3>
                 <hr>
@@ -85,7 +106,9 @@
                 </table>
                 </div>
                 </div> 
-            </div> 
+            </div>
+            
+
         </div>
     </div>
    <!-- <script>
