@@ -107,7 +107,7 @@
         <div class="row ">
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu<fecha-hoy></fecha-hoy></h5>
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body  ">
@@ -218,6 +218,25 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min
 .js" integrity="sha384-
 ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 crossorigin="anonymous"></script>
+<script>
+  class FechaHoy extends HTMLElement {
+  constructor() {
+    super();
 
+    let shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.innerHTML = `<div>${this.fecha()}</div>`;
+  }
+
+  fecha() {
+    var today = new Date();
+    var dia = String(today.getDate());
+    var mes = String(today.getMonth() + 1); //January is 0!
+    var ano = today.getFullYear();
+
+    return `${dia}/${mes}/${ano}`;
+  }
+}
+window.customElements.define('fecha-hoy', FechaHoy);
+</script>
 </body>
 </html>
