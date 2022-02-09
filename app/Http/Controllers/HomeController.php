@@ -73,7 +73,7 @@ class HomeController extends Controller
                 })->groupBy('as_serie')
                 ->orderBy('numero','desc')
                 ->get();
-           /* $modelos = DB::table('incidencias , modelos')
+            $modelos = DB::table('incidencias')
                 ->select(DB::raw('as_serie, count(*) as numero'))
                 ->whereIn('as_serie', function($query){
                 $query->select('n_serie')
@@ -84,15 +84,14 @@ class HomeController extends Controller
                     ->from(with(new Modelo())->getTable());
                 });
                 })->groupBy('as_serie')
-                ->get();*/
-
-                $modelos = DB::table('incidencias','ascensors','modelos')
+                ->get();
+            /*$modelos = DB::table('incidencias','ascensors','modelos')
                     ->select(DB::raw('count(*) as numero, modelos.marca as marca'))
                     ->where('incidencias.as_serie','ascensors.n_serie')
                     ->where('ascensors.modelo_id','modelos.id')
                     ->where('zona_id', auth()->user()->zona)
                     ->groupBy('incidencias.as_serie')
-                    ->get();
+                    ->get();*/
             $top_modelos = DB::table('incidencias')
                 ->select(DB::raw('as_serie, count(*) as numero'))
                 ->whereIn('as_serie', function($query){
