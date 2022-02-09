@@ -73,31 +73,39 @@ class HomeController extends Controller
                 })->groupBy('as_serie')
                 ->orderBy('numero','desc')
                 ->get();
-            $modelos = DB::table('incidencias')
-            ->select(DB::raw('as_serie, count(*) as numero'))
-            ->whereIn('as_serie', function($query){
-            $query->select('n_serie')
-            ->from(with(new Ascensor)->getTable())
-            ->where('zona_id', auth()->user()->zona)
-            ->whereIn('modelo_id', function($query){
-                $query->select('id')
-                ->from(with(new Modelo())->getTable());
-            });
-            })->groupBy('as_serie')
-            ->get();
+           /* $modelos = DB::table('incidencias , modelos')
+                ->select(DB::raw('as_serie, count(*) as numero'))
+                ->whereIn('as_serie', function($query){
+                $query->select('n_serie')
+                ->from(with(new Ascensor)->getTable())
+                ->where('zona_id', auth()->user()->zona)
+                ->whereIn('modelo_id', function($query){
+                    $query->select('id')
+                    ->from(with(new Modelo())->getTable());
+                });
+                })->groupBy('as_serie')
+                ->get();*/
+
+                $modelos = DB::table('incidencias','ascensors','modelos')
+                    ->select(DB::raw('count(*) as numero, modelos.marca as marca'))
+                    ->where('incidencias.as_serie','ascensors.n_serie')
+                    ->where('ascensors.modelo_id','modelos.id')
+                    ->where('zona_id', auth()->user()->zona)
+                    ->groupBy('incidencias.as_serie')
+                    ->get();
             $top_modelos = DB::table('incidencias')
-            ->select(DB::raw('as_serie, count(*) as numero'))
-            ->whereIn('as_serie', function($query){
-            $query->select('n_serie')
-            ->from(with(new Ascensor)->getTable())
-            ->where('zona_id', auth()->user()->zona)
-            ->whereIn('modelo_id', function($query){
-                $query->select('id')
-                ->from(with(new Modelo())->getTable());
-            });
-            })->groupBy('as_serie')
-            ->orderBy('numero','desc')
-            ->get();
+                ->select(DB::raw('as_serie, count(*) as numero'))
+                ->whereIn('as_serie', function($query){
+                $query->select('n_serie')
+                ->from(with(new Ascensor)->getTable())
+                ->where('zona_id', auth()->user()->zona)
+                ->whereIn('modelo_id', function($query){
+                    $query->select('id')
+                    ->from(with(new Modelo())->getTable());
+                });
+                })->groupBy('as_serie')
+                ->orderBy('numero','desc')
+                ->get();
             return view('jefe', ['incidencias' => $incidencias, 'completas' => $completas, 'num_series' => $num_series, 'top_num_series' => $top_num_series, 'modelos' => $modelos, 'top_modelos' => $top_modelos]);
         }
         if(Auth::user()->rol =="Operador"){

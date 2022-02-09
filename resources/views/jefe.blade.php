@@ -57,7 +57,7 @@
                     </thead>
                     @foreach ($top_num_series as $top_num_serie )
                     <tr>
-                    <td>{{ $top_num_serie->as_serie }}</td>
+                    <td>{{ $top_num_serie-> as_serie }}</td>
                     <td>{{ $top_num_serie->numero}}</td>
                     </tr>
                     @endforeach
@@ -78,7 +78,7 @@
                     </thead>
                     @foreach ($modelos as $modelo)
                     <tr>
-                    <td>{{ $modelo->as_serie }}</td>
+                    <td>{{ $modelo->marca }}</td>
                     <td>{{ $modelo->numero}}</td>
                     </tr>
                     @endforeach
