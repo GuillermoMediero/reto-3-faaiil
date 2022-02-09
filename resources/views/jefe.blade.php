@@ -89,7 +89,7 @@
             </div> 
         </div>
         <div class="row">
-        <div class="col-sm-12 col-md-6">
+        <!--<div class="col-sm-12 col-md-6">
             <h3>Incidencias Modelo</h3>
                 <hr>
                 <div class="row table-responsive">
@@ -108,7 +108,7 @@
                 </table>
                 </div>
                 </div> 
-            </div>
+            </div>-->
         </div>
     </div>
    <!-- <script>
