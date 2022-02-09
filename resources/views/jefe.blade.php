@@ -88,6 +88,27 @@
             </div>
 
             <div class="col-sm-12 col-md-6">
+            <h3>Top Incidencias Numero de Serie</h3>
+                <hr>
+                <div class="row table-responsive">
+                <div class="col-sm-12">
+                <table class="table table-bordered border-primary table-success table-striped">
+                    <thead class="table-dark text-white">
+                    <th>Marca Ascensor</th>
+                    <th>Nº Incidencias</th>
+                    </thead>
+                    @foreach ($top_modelos as $top_modelo)
+                    <tr>
+                    <td>{{ $top_modelo->as_serie }}</td>
+                    <td>{{ $top_modelo->numero}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+                </div>
+                </div> 
+            </div>
+
+            <div class="col-sm-12 col-md-6">
             <h3>Incidencias Totales</h3>
                 <hr>
                 <div class="row table-responsive">
