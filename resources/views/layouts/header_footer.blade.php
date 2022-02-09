@@ -228,12 +228,12 @@ crossorigin="anonymous"></script>
   }
 
   fecha() {
-    var today = new Date();
-    var dia = String(today.getDate());
-    var mes = String(today.getMonth() + 1); //January is 0!
-    var ano = today.getFullYear();
+    var hoy = new Date();
+    var dia = String(hoy.getDate());
+    var mes = String(hoy.getMonth() + 1);
+    var ano = hoy.getFullYear();
 
-    return `${dia}/${mes}/${ano}`;
+    return `${dia}-${mes}-${ano}`;
   }
 }
 window.customElements.define('fecha-hoy', FechaHoy);
