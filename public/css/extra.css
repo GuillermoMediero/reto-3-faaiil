@@ -5,11 +5,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    font-size: 2vh ;
+
 }
 
 :root{
     /* ===== Colores ===== */
-    --body-color: #E4E9F7;
+    --body-color: #ffffff;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
@@ -311,12 +313,7 @@ body.dark .home .text{
 body{
     height: 100vh;
 }
-footer{
-    width:100%; 
-    position:absolute; 
-    bottom:0; 
-    height: 7vh;
-}
+
 .header{
     height: 10vh;
 }
@@ -522,24 +519,41 @@ aside ul li a span.notif {
 /*modo oscuro v2*/
  [data-theme="dark"]   {
     background-color: #111 !important;
-    color: #eee;
+    color: #eee !important;
   }
   
   [data-theme="dark"] .bg-black {
     background-color: #fff !important;
+    color: #222 !important;
   }
   
   [data-theme="dark"] .bg-dark {
     background-color: #eee !important;
+    color: #222 !important;
   }
   
   [data-theme="dark"] .bg-light {
     background-color: #222 !important;
+    color: #eee !important;
   }
   
   [data-theme="dark"] .bg-white {
     background-color: #000 !important;
+    color: #fff !important;
+  }
+  [data-theme="dark"] .text-white{
+    color: #000 !important; 
   }
 
 /*pie siempre debajo*/
-footer { position: relative; bottom: 0; }
+footer { position: fixed; bottom: 0; }
+
+
+h1, .h1 {
+    font-size: calc(2.35rem + 1.2vw) !important;
+  }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 3.25rem !important;
+    }
+  }

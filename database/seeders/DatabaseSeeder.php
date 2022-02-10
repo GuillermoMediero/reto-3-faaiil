@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Modelo::factory()->count(10)->create();   
-        Zona::factory()->count(10)->create();
-        Ascensor::factory()->count(10)->create();
+        Modelo::factory()->count(20)->create();   
+        Zona::factory()->count(20)->create();
+        Ascensor::factory()->count(20)->create();
         
         
        

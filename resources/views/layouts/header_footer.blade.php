@@ -62,28 +62,33 @@
           </div>
 			  </nav>
         </div>
-        <div class="row bg-light">
-          <div class="text-center p-2 col-12"> 
-            <form class="d-flex justify-content-center"method="get" action="{{route('busqueda.show')}}">
+        <div class="row bg-light text-center pt-3 pb-3 justify-content-center">
+          
+            <form class=" col-12 row d-flex justify-content-center"method="get" action="{{route('busqueda.show')}}">
               @csrf
+              
+            
             @if(Auth::user()->rol=="Tecnico")
-					  <input class="form-control me-2" type="search" id="buscarIncidencia" name = "buscartecnico" placeholder="Search" aria-label="Search" style="width:350px">
+           
+					  <input class="col-12 col-md-4 form-control me-2" type="search" id="buscarIncidencia" name = "buscartecnico" placeholder="Search" aria-label="Search" style="max-width:350px">
             @else
-            <input class="form-control me-2" type="search" id="buscarZona" name = "buscaroperador" placeholder="Search" aria-label="Search" style="width:350px">
+            <input class="col-12 col-md-4 form-control me-2" type="search" id="buscarZona" name = "buscaroperador" placeholder="Search" aria-label="Search" style="width:350px">
             @endif
-					  <button class="btn btn-primary" id="buscar" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+					  <button class="col-2 col-md-1 btn btn-primary" id="buscar" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="max-width:350px">
 						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 					  </svg></button>
 
-            <div class="ps-2 color-danger">
+            <div class="col-1 ps-2 color-danger">
               <a href="{{ route('prioridad') }}" id="prioridad" class="border-0 bg-transparent"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
               </svg></a>
             </div>
+       
+        
 					  </form>
 
-          </div>
+        
         </div>
         <div class="row ">
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -118,121 +123,137 @@
             <input type="checkbox" class="form-check-input" id="darkSwitch">
             <label class="custom-control-label" for="darkSwitch">Modo Oscuro</label>
           </div>
- <!-- script de modo oscuro -->
- <script>
-    var darkSwitch = document.getElementById("darkSwitch");
-    window.addEventListener("load", function () {
-      if (darkSwitch) {
-        initTheme();
-        darkSwitch.addEventListener("change", function () {
-          resetTheme();
-        });
-      }
-    });
-    function initTheme() {
-      var darkThemeSelected =
-        localStorage.getItem("darkSwitch") !== null &&
-        localStorage.getItem("darkSwitch") === "dark";
-      darkSwitch.checked = darkThemeSelected;
-      darkThemeSelected
-        ? document.body.setAttribute("data-theme", "dark")
-        : document.body.removeAttribute("data-theme");
-    }
+              <!-- script de modo oscuro -->
+              <script>
+                  var darkSwitch = document.getElementById("darkSwitch");
+                  window.addEventListener("load", function () {
+                    if (darkSwitch) {
+                      initTheme();
+                      darkSwitch.addEventListener("change", function () {
+                        resetTheme();
+                      });
+                    }
+                  });
+                  function initTheme() {
+                    var darkThemeSelected =
+                      localStorage.getItem("darkSwitch") !== null &&
+                      localStorage.getItem("darkSwitch") === "dark";
+                    darkSwitch.checked = darkThemeSelected;
+                    darkThemeSelected
+                      ? document.body.setAttribute("data-theme", "dark")
+                      : document.body.removeAttribute("data-theme");
+                  }
 
 
-    function resetTheme() {
-      if (darkSwitch.checked) {
-        document.body.setAttribute("data-theme", "dark");
-        localStorage.setItem("darkSwitch", "dark");
-      } else {
-        document.body.removeAttribute("data-theme");
-        localStorage.removeItem("darkSwitch");
-      }
-    }
-    </script>
-        </div>
-                </li>
+                  function resetTheme() {
+                    if (darkSwitch.checked) {
+                      document.body.setAttribute("data-theme", "dark");
+                      localStorage.setItem("darkSwitch", "dark");
+                    } else {
+                      document.body.removeAttribute("data-theme");
+                      localStorage.removeItem("darkSwitch");
+                    }
+                  }
+                  </script>
+                      </div>
+                              </li>
 
 
-                </ul>
-              </div>
-            </div>
-          </div>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
 
 
-          <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min
-          .js" integrity="sha384-
-          ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-          crossorigin="anonymous"></script>
-          <script>$(document).ready(function(){
-            $(".menu").click(function(){
-                $(".keep").toggleClass("width");
-            });
-          });</script> 
-<script>
-  var path = "{{ url('autocomplete-search-zona') }}";
+                        <script
+                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min
+                        .js" integrity="sha384-
+                        ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                        crossorigin="anonymous"></script>
+                        <script>$(document).ready(function(){
+                          $(".menu").click(function(){
+                              $(".keep").toggleClass("width");
+                          });
+                        });</script> 
+              <script>
+                var path = "{{ url('autocomplete-search-zona') }}";
 
-    $('#buscarZona').typeahead({
+                  $('#buscarZona').typeahead({
 
-        source: function(query, process){
+                      source: function(query, process){
 
-            return $.get(path, {query:query}, function(data){
+                          return $.get(path, {query:query}, function(data){
 
-                return process(data);
+                              return process(data);
 
-            });
+                          });
 
-        }
+                      }
 
-    });
-</script>
-<script>
-  var rut = "{{ url('autocomplete-search-tipo') }}";
+                  });
+              </script>
+              <script>
+                var rut = "{{ url('autocomplete-search-tipo') }}";
 
-  $('#buscarIncidencia').typeahead({
+                $('#buscarIncidencia').typeahead({
 
-  source: function(query, process){
+                source: function(query, process){
 
-      return $.get(rut, {query:query}, function(data){
+                    return $.get(rut, {query:query}, function(data){
 
-          return process(data);
+                        return process(data);
 
-      });
+                    });
 
-  }
-  });
-                     
-          </script>
-              <div class="col-12">
-                @yield('rol')
-              </div>
-          </div> 
+                }
+                });
+                                  
+                        </script>
+                            <div class="col-12 " style="margin-bottom: 7vh;">
+                              @yield('rol')
+                            </div>
+                        </div> 
 
-          
-          <footer class="row bg-dark text-center text-white">
-            <nav class="navbar navbar-dark bg-dark">
-              <div class="text-center p-1 ">
-                @if(Auth::user()->rol=="Tecnico")
-                <a class="nav-link text-white" href="#">Contacte al Operario</a>
-                @elseif(Auth::user()->rol=="Operador")
-                  <a class="nav-link text-white" href="#">Contacte al Jefe</a>
-                @elseif(Auth::user()->rol=="Jefe")
-                <a class="nav-link text-white" href="#">Contacte a Julen</a>
-                @endif
-              </div>
-              <div  class="text-center bg- p-1 ">
-                <a class="nav-link text-white" href="">© 2022 Creative Commons: Igobide <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-              </div>
-              <div class="text-center p-1">
-                
-                <a class="nav-link text-white" href="#">Manual de la aplicacion</a>
-              
-              </div>
-             </nav>
-
- 
-          </footer>
+                <div class="row">
+                          <footer class=" bg-dark text-center text-white mt-3" style="z-index: 3;">
+                            <nav class="navbar navbar-dark bg-dark">
+                              <div class="text-center  col-4">
+                                  @if(Auth::user()->rol=="Tecnico")
+                                  <a class="nav-link text-white" href="#">Contacte al Operario</a>
+                              </div>
+                              <div  class="text-center  col-4">
+                                  <a class="nav-link text-white" href=""><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+                              </div>
+                              <div class="text-center  col-4">
+                                <a class="nav-link text-white" href="{{ asset('manual/tecnico.pdf') }}">Manual de la aplicacion</a>
+                                  @elseif(Auth::user()->rol=="Operador")
+                                    <a class="nav-link text-white" href="#">Contacte al Jefe</a>
+                              </div>
+                              <div  class="text-center col-4">
+                                  <a class="nav-link text-white" href=""><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+                              </div>
+                              <div class="text-center col-4">
+                                <a class="nav-link text-white" href="{{ asset('manual/operador.pdf') }}">Manual de la aplicacion</a>
+                                  @elseif(Auth::user()->rol=="Jefe")
+                                  <a class="nav-link text-white" href="#">Contacte a Julen</a>
+                              </div>
+                              <div  class="text-center  col-4">
+                                  <a class="nav-link text-white" href=""><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+                              </div>
+                              <div class="text-center  col-4">
+                                @else
+                                  <a class="nav-link text-white" href="#">Eres Julen</a>
+                              </div>
+                              <div  class="text-center   col-4">
+                                  <a class="nav-link text-white" href=""><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+                              </div>
+                              <div class="text-center  col-4">
+                                <a class="nav-link text-white" href="{{ asset('manual/admin.pdf') }}">Manual de la aplicacion</a>
+                                  @endif
+                              </div>
+                            </nav>
+                          </footer>
+                          </div> 
         </div>
     <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min

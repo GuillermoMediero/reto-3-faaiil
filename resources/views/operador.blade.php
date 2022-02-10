@@ -21,12 +21,12 @@
                     
                 @endif
                     <div class=" col-1"></div>
-                    <div class=" col-3 text-start align-self-center">
-                        <h3>{{ $ascensor->direccion }}</h3>
+                    <div class=" col-5 text-start align-self-center">
+                        <h5>{{ $ascensor->direccion }}</h5>
                         <h4>Nº : {{ $incidencia->as_serie }}</h4>
                     </div>
-                    <div class=" col-1 "></div>
-                    <div class=" col-5 text-center align-self-center ">
+                    
+                    <div class=" col-3 text-center align-self-center ">
                     <div class="btn-group" role="group" aria-label="Basic example">
                     @if($incidencia->estado==0)
                         <button type="button" class="btn type{{$incidencia->id}} btn-outline-danger rounded-circle active ms-3" style="height:30px; width: 30px;"></button>
@@ -83,24 +83,20 @@
         </div>
         <div class="row">
         <div id="colapsa{{$incidencia->id}}" class=" col-7 collapse border border-dark border-top-0 justify-self-start" >
-            <div class=" card card-body border-0 ">
+            <div class=" card card-body border-0 bg-white ">
             <div class=" col-1 "></div>
             <div class=" col-11 ">
                 <div class="row  justify-content-space-between">
-                    <div class=" col-2 d-flex align-self-center"><h5>Fecha y hora</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5>Tipo</h5> </div> 
+                    <div class=" col-4 d-flex align-self-center"><h5>Fecha y hora</h5> </div> 
+                    <div class=" col-3 d-flex align-self-center"><h5>Tipo</h5> </div> 
                     <div class=" col-2 d-flex align-self-center"><h5>Modelo</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5>Segmento</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center" ><h5>Detalles operario</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5>Detalles tecnico</h5> </div> 
+                    <div class=" col-3 d-flex align-self-center"><h5>Segmento</h5> </div> 
                 </div>
                 <div class="row ">
-                    <div class=" col-2 d-flex align-self-center"><h5 class="me-5">{{ $incidencia->created_at }}</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5 class="me-5">{{ $incidencia->tipo }}</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5 class="me-5">{{ $ascensor->modelo_id }}</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5 class="me-5">{{ $ascensor->segmento }}</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5 class="me-5">{{ $incidencia->prioridad }}</h5> </div> 
-                    <div class=" col-2 d-flex align-self-center"><h5 class="me-5">{{ $incidencia->estado }}</h5> </div> 
+                    <div class=" col-4 d-flex align-self-center"><p class="me-5">{{ $incidencia->created_at }}</p> </div> 
+                    <div class=" col-3 d-flex align-self-center"><p class="me-5">{{ $incidencia->tipo }}</p> </div> 
+                    <div class=" col-2 d-flex align-self-center"><p class="me-5">{{ $ascensor->modelo_id }}</p> </div> 
+                    <div class=" col-3 d-flex align-self-center"><p class="me-5">{{ $ascensor->segmento }}</p> </div> 
                 </div>
                 </div>
 
@@ -109,14 +105,14 @@
         </div>
 
         <div id="colaps{{$incidencia->id}}" class=" col-4 collapse border border-dark border-top-0 ms-auto" >
-            <div class=" card card-body border-0">
-            <ul class="list-group col-12 ">
+            <div class=" card card-body border-0 bg-white">
+            <ul class="list-group col-12  ">
                 <?php
                     foreach($tecnicos as $tecnico){
                         if($tecnico->zona == $ascensor->zona_id){
                         ?>
                         <div class="row ">
-                            <li class=" list-group-item col-12 d-flex align-self-center"><a href="{{ route('store',['idtecnico' => $tecnico->id,'idincidencia' => $incidencia->id]) }}" class="text-dark text-decoration-none"><h5 class="me-5">{{  $tecnico->name }}</h5></a> </li> 
+                            <li class="bg-white list-group-item col-12 d-flex align-self-center"><a href="{{ route('store',['idtecnico' => $tecnico->id,'idincidencia' => $incidencia->id]) }}" class=" text-decoration-none"><h5 class="me-5">{{  $tecnico->name }}</h5></a> </li> 
                         </div>
                         <?php
                         }
@@ -134,15 +130,6 @@
             @endforeach
             
         
-
-        <div class="row d-flex mt-3 mb-3">
-            <ul class="list-group list-group-horizontal justify-content-center" style="list-style-type: none;">
-                <li class="page-item"><a class="page-link" href="#">Hoy</a></li>
-                <li class="page-item"><a class="page-link" href="#">7 dias</a></li>
-                <li class="page-item"><a class="page-link" href="#">Este mes</a></li>
-                <li class="page-item"><a class="page-link" href="#">Todas</a></li>
-            </ul>
-        </div>  
         <div id="añadir" style="position: fixed;top:75vh;left:88vw">
         <a href="{{route('home.crearincidencia')}}" data-bs-target="#staticBackdrop">
                 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">

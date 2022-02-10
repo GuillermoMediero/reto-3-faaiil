@@ -27,6 +27,7 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    font-size: small !important;
 }
 
 ::selection{
@@ -312,9 +313,8 @@ body{
 }
 footer{
     width:100%; 
-    position:absolute; 
+    position:relative; 
     bottom:0; 
-    height: 7vh;
 }
 .header{
     height: 10vh;
@@ -592,9 +592,17 @@ a.manual-users {
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
 }
+h1, .h1 {
+    font-size: calc(2.35rem + 1.2vw) !important;
+  }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 3.25rem !important;
+    }
+  }
 @media screen and(min-width: 56.25px) {
 
-    * { font-size: 13px; }
+    * { font-size: .25rem !important; }
 }
 @media screen and(min-width: 75rem) {
 

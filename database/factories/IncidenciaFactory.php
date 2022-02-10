@@ -23,8 +23,8 @@ class IncidenciaFactory extends Factory
         return [
             'prioridad' => $this->faker->randomElement(['0','1','2']),
             'estado'=>$this->faker->randomElement(['0','1','2']),
-            'detalles_op'=>$this->faker->address(),
-            'detalles_tec'=>$this->faker->address(),
+            'detalles_op'=>$this->faker->streetName(),
+            'detalles_tec'=>$this->faker->streetName(),
             'tipo'=>$this->faker->randomElement(['electrica','mecanica','estetica']),
 
         ];

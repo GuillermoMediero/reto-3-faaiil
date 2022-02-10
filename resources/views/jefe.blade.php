@@ -1,7 +1,7 @@
 @extends('layouts.header_footer')
 @section('rol')
     
-    <div class="container"style="height:75vh">
+    <div class="container">
         <h3 class="pt-3">Jefe</h3>
         <div class="row">
         <div class="col-sm-12 col-md-6">
